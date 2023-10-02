@@ -3,7 +3,7 @@ import React from "react";
 
 export default function CategoryCard({ imgUri, title }) {
   return (
-    <TouchableOpacity className="mr-8 relative">
+    <TouchableOpacity className="mr-3 relative">
       <Image
         source={{
           uri: imgUri,
