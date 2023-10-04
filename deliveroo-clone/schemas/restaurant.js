@@ -31,6 +31,22 @@ export default defineType({
       type: 'geopoint',
         }),
     defineField({
+      name: 'lat',
+      title: 'Latitude of the restaurant',
+      type: 'number',
+        }),
+    defineField({
+      name: 'lon',
+      title: 'Longitude of the restaurant',
+      type: 'number',
+        }),
+    defineField({
+      name: 'type',
+      title: 'Category',
+      type: 'reference',
+      to: [{type: 'category'}]
+        }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
