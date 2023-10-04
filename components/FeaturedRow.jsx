@@ -26,8 +26,6 @@ const FeaturedRow = ({ id, title, description, featuredCategory }) => {
       .then((data) => setRestaurants(data?.restaurants));
   }, []);
 
-  console.log(restaurants);
-
   return (
     <View>
       <View className="mt-4 flex-row items-center justify-between px-4">
@@ -46,11 +44,12 @@ const FeaturedRow = ({ id, title, description, featuredCategory }) => {
         {/* ResturantCards.. */}
         {restaurants.map((restaurant) => (
           <RestaurantCard
+            key={restaurant._id}
             id={restaurant._id}
-            imageUrl={restaurant.asset}
+            imageUrl={restaurant.image.asset._ref}
             title={restaurant.name}
             rating={restaurant.rating}
-            genre={'restaurant'}
+            genre={restaurant.type?.name}
             address={restaurant.address}
             short_description={restaurant.description}
             dishes={restaurant.dishes}
